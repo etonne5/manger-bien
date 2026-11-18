@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --noir:#1A1A1A;
+  --or:#EAB308;
+  --or-dark:#C99A06;
+  --rouge:#C0392B;
+  --surface:#FFFFFF;
+  --surface-2:#FFF9E6;
+  --surface-dark:#111111;
+  --muted:#6B7280;
+  --line:#E8DDC2;
+  --safe-area-inset-top:0px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --surface:#1A1A1A; --surface-2:#242424; --muted:#C8C8C8; --line:#3a3a3a; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--surface);color:#1A1A1A;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,.font-display{font-family:'Poppins',system-ui,sans-serif}
+img{max-width:100%}
+a{color:inherit}
+.container-x{max-width:1180px;margin-inline:auto;padding-inline:18px}
+@media(min-width:768px){.container-x{padding-inline:24px}}
+.btn-gold{background:var(--or);color:#1A1A1A;font-weight:800;box-shadow:0 10px 24px rgba(234,179,8,.28)}
+.btn-gold:hover{background:#F5C518;transform:translateY(-1px)}
+.btn-dark{background:#1A1A1A;color:#fff;font-weight:700}
+.btn-dark:hover{background:#000}
+.btn-wa{background:#22A55B;color:#fff;font-weight:800}
+.btn-wa:hover{background:#1B8A4B}
+.btn-outline-gold{border:2px solid var(--or);color:#1A1A1A;font-weight:800;background:#fff}
+.btn-outline-gold:hover{background:#FFF9E6}
+.card-shadow{box-shadow:0 12px 32px rgba(0,0,0,.10)}
+.img-cover{object-fit:cover;width:100%;height:100%;display:block}
+.chip{border:1.5px solid #E8DDC2;background:#fff;color:#1A1A1A;font-weight:700;border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip:hover{border-color:var(--or)}
+.chip.active{background:#1A1A1A;color:#fff;border-color:#1A1A1A}
+.pin{width:32px;height:32px;border-radius:999px 999px 999px 4px;background:#C0392B;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:14px;border:2px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.28);transform:rotate(45deg)}
+.pin span{transform:rotate(-45deg)}
+.pin--on{background:#EAB308;color:#1A1A1A;transform:rotate(45deg) scale(1.12)}
+.map-selected{border-color:#EAB308!important;background:#FFF9E6!important;box-shadow:0 0 0 3px rgba(234,179,8,.22)}
+.nav-link-btn{font-weight:700;font-size:14px;padding:8px 10px;border-radius:999px;white-space:nowrap}
+.nav-link-btn.active{background:#1A1A1A;color:#fff}
+.field{width:100%;border:1.5px solid #E5E7EB;border-radius:12px;padding:12px 14px;background:#fff;font-size:14px;outline:none}
+.field:focus{border-color:#EAB308;box-shadow:0 0 0 4px rgba(234,179,8,.18)}
+.badge-pop{background:#EAB308;color:#1A1A1A}
+.badge-jour{background:#C0392B;color:#fff}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none}
+
+/* Carte Leaflet : marqueur maison (remplace leaflet-div-icon) */
+.mb-pin{background:none;border:none}
+.leaflet-container{font-family:'Inter',system-ui,sans-serif;z-index:0}
+.leaflet-container .leaflet-control-attribution{font-size:10px}

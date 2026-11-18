@@ -1,0 +1,22 @@
+# Dépendances
+node_modules
+
+# Build
+dist
+.vite
+
+# Caches et journaux
+.npm-cache
+*.log
+npm-debug.log*
+
+# Fichiers propres à l'environnement d'origine (non versionnés)
+.clippy
+Manger+Bien+Css+Bootstrap.tar.gz
+
+# Divers
+.DS_Store
+*.local
+.env
+.env.*
+!/.env.example
