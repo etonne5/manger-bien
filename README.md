@@ -51,5 +51,33 @@ La carte utilise les tuiles OpenStreetMap : elle nécessite une connexion intern
 Ce composant provenait d'un « artifact » : il importait les images depuis
 `container:///mnt/data/src/assets/...` et une librairie `@meta-ai/artifact-maps`
 non disponible sur npm. Ces imports ont été remplacés par des imports Vite locaux
-et la carte par Leaflet. Le fichier `Manger+Bien+Css+Bootstrap.tar.gz` conserve
-l'archive d'origine.
+et la carte par Leaflet. L'archive `Manger+Bien+Css+Bootstrap.tar.gz` d'origine
+reste sur le disque mais n'est pas versionnée (voir `.gitignore`).
+
+## Mettre le projet sur GitHub
+
+Le dépôt local est déjà initialisé (branche `main`, commit initial). Il reste à le
+relier à GitHub :
+
+1. Créer un dépôt **vide** nommé `manger-bien` sur https://github.com/new
+   (ne rien cocher : ni README, ni `.gitignore`, ni licence).
+2. Dans le dossier du projet :
+
+```powershell
+git remote add origin https://github.com/<ton-compte>/manger-bien.git
+git push -u origin main
+```
+
+Une fenêtre de connexion GitHub s'ouvre au premier `push` (Git Credential Manager).
+
+Variante avec GitHub CLI :
+
+```powershell
+winget install --id GitHub.cli -e
+gh auth login
+gh repo create manger-bien --public --source=. --remote=origin --push
+```
+
+`node_modules/`, `dist/`, `.npm-cache/`, `.clippy/` et l'archive `.tar.gz` ne sont
+pas versionnés : le dépôt ne contient que les sources, les images et la documentation.
+
